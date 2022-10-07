@@ -1,6 +1,6 @@
 # VirtualPet
 
-VirtualPet project 
+VirtualPet project 🐩 🐕
 
 ## About
 
@@ -24,7 +24,7 @@ XXXXXX
 
 You can give them a name
 
-They can get older
+They can get older 
 
 As they get older, they get hungrier and less fit
 
