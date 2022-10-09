@@ -118,3 +118,41 @@ describe('checkup', () => {
         expect(pet.checkup()).toBe('I feel great!');
     });
 });
+
+
+describe('isAlive', () => {
+
+    const pet = new Pet('Fido');
+
+    it('if fitness is 0 or less, return false', () => {
+        pet.fitness = -3;
+        pet.hunger = 5;
+        pet.age = 10;
+
+        expect(pet.isAlive).toBeFalsy();
+    });
+
+    it('if hunger is 10 or more, return false', () => {
+        pet.fitness = 3;
+        pet.hunger = 12;
+        pet.age = 10;
+
+        expect(pet.isAlive).toBeFalsy();
+    });
+
+    it('if age is 30 or more, return false', () => {
+        pet.fitness = 3;
+        pet.hunger = 5;
+        pet.age = 32;
+
+        expect(pet.isAlive).toBeFalsy();
+    });
+
+    it('if none of above, return true', () => {
+        pet.fitness = 3;
+        pet.hunger = 5;
+        pet.age = 10;
+
+        expect(pet.isAlive).toBeTruthy();
+    });
+})
