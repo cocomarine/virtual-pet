@@ -88,7 +88,7 @@ describe('checkup', () => {
         pet.hunger = 3;
         pet.checkup();
 
-        expect(pet.checkup()).toEqual('I need a walk');
+        expect(pet.checkup()).toBe('I need a walk');
     });
 
     it('if hunger level is 5 or more, return "I am hungry"', () => {
@@ -97,7 +97,7 @@ describe('checkup', () => {
         pet.hunger = 6;
         pet.checkup();
 
-        expect(pet.checkup()).toEqual('I am hungry');
+        expect(pet.checkup()).toBe('I am hungry');
     });
 
     it('if both of the above are true, return "I am hungry AND I need a walk"', () => {
@@ -106,7 +106,7 @@ describe('checkup', () => {
         pet.hunger = 6;
         pet.checkup();
 
-        expect(pet.checkup()).toEqual('I am hungry AND I need a walk');
+        expect(pet.checkup()).toBe('I am hungry AND I need a walk');
     });
 
     it('if both of the above are true, return "I feel great!"', () => {
@@ -115,6 +115,6 @@ describe('checkup', () => {
         pet.hunger = 3;
         pet.checkup();
 
-        expect(pet.checkup()).toEqual('I feel great!');
+        expect(pet.checkup()).toBe('I feel great!');
     });
 });
