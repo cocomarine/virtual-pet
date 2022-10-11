@@ -21,6 +21,9 @@ Pet.prototype.growUp = function() {
 };
 
 Pet.prototype.walk = function() {
+    if(!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+    }
     if ((this.fitness + 4) <= MAXIMUM_FITNESS) {
         this.fitness += 4;
     } else {
@@ -29,6 +32,9 @@ Pet.prototype.walk = function() {
 };
 
 Pet.prototype.feed = function() {
+    if(!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+    }
     if ((this.hunger - 3) >= MINIMUM_HUNGER) {
         this.hunger -= 3;
     } else {
