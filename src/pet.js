@@ -45,7 +45,7 @@ Pet.prototype.feed = function() {
     };
 };
 
-Pet.prototype.checkup = function() {
+Pet.prototype.checkUp = function() {
     if(!this.isAlive) {
         return 'Your pet is no longer alive :(';
     }
