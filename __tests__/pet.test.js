@@ -212,4 +212,21 @@ describe('adoptChild', () => {
         expect(parent.children[0].age).toEqual(2);
     });
 
+    it('increase Nyangi\'s age by 1, take her to walk and feed her', () => {
+        parent.children[2].growUp();
+        parent.children[2].walk();
+        parent.children[2].feed();
+
+        expect(parent.children[2]).toEqual(
+            { name: 'Nyangi', age: 1, hunger: 2, fitness: 10, children: [] } 
+        );
+    });
+
+    it('when a dead pet adopts a child, throw an error', () => {
+        parent.age = 30;
+        const child4 = new Pet('Congi');
+        
+        expect(() => parent.adoptChild(child4)).toThrow('Your pet is no longer alive :(');
+
+    });
 });
