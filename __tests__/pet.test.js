@@ -23,8 +23,6 @@ describe('constructor', () => {
 
 describe('growUp', () => {
 
-    // const pet = new Pet('Fido');
-
     it('increase the age by 1', () => {   
         const pet = new Pet('Fido');
         pet.growUp();
@@ -181,3 +179,37 @@ describe('isAlive', () => {
         expect(pet.isAlive).toBeTruthy();
     });
 })
+
+describe('adoptChild', () => {
+    const parent = new Pet('Yeppi');
+    const child1 = new Pet('Happy');
+
+    it('adopt a child with children property of array \
+    where the first element is the child instance you passed', () => {
+        parent.adoptChild(child1);
+
+        expect(parent.children).toEqual([ { name: 'Happy', age: 0, hunger: 0, fitness: 10, children: [] } ]);
+    });
+
+    it('adopt two more children, resulting in three children', () => {
+        const child2 = new Pet('Doory');
+        const child3 = new Pet('Nyangi');
+        parent.adoptChild(child2);
+        parent.adoptChild(child3);
+
+        expect(parent.children).toEqual(
+            [ 
+                { name: 'Happy', age: 0, hunger: 0, fitness: 10, children: [] },
+                { name: 'Doory', age: 0, hunger: 0, fitness: 10, children: [] },
+                { name: 'Nyangi', age: 0, hunger: 0, fitness: 10, children: [] } 
+            ]);
+    });
+
+    it('increase Happy\'s age by 2', () => {
+        parent.children[0].growUp();
+        parent.children[0].growUp();
+
+        expect(parent.children[0].age).toEqual(2);
+    });
+
+});
