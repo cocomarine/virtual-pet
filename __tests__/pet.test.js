@@ -205,14 +205,14 @@ describe('adoptChild', () => {
             ]);
     });
 
-    it('increase Happy\'s age by 2', () => {
+    it('increase first child Happy\'s age by 2', () => {
         parent.children[0].growUp();
         parent.children[0].growUp();
 
         expect(parent.children[0].age).toEqual(2);
     });
 
-    it('increase Nyangi\'s age by 1, take her to walk and feed her', () => {
+    it('increase third child Nyangi\'s age by 1, take her to walk and feed her', () => {
         parent.children[2].growUp();
         parent.children[2].walk();
         parent.children[2].feed();
@@ -230,3 +230,13 @@ describe('adoptChild', () => {
 
     });
 });
+
+describe('haveBaby', () => {
+    it('Create a baby object inside pet', () => {
+        const parent = new Pet('Yeppi');
+        parent.haveBaby('Happy');
+
+        expect(parent.children).toEqual([ { name: 'Happy', age: 0, hunger: 0, fitness: 10, children: [] } ]);
+    });
+});
+
