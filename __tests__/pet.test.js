@@ -181,6 +181,7 @@ describe('isAlive', () => {
 })
 
 describe('adoptChild', () => {
+
     const parent = new Pet('Yeppi');
     const child1 = new Pet('Happy');
 
@@ -232,11 +233,49 @@ describe('adoptChild', () => {
 });
 
 describe('haveBaby', () => {
-    it('Create a baby object inside pet', () => {
-        const parent = new Pet('Yeppi');
+
+    const parent = new Pet('Yeppi');
+
+    it('create a baby object inside pet', () => {
         parent.haveBaby('Happy');
 
         expect(parent.children).toEqual([ { name: 'Happy', age: 0, hunger: 0, fitness: 10, children: [] } ]);
+    });
+
+    it('create two more baby objects inside pet', () => {
+        parent.haveBaby('Doory');
+        parent.haveBaby('Nyangi');
+
+        expect(parent.children).toEqual(
+            [ 
+                { name: 'Happy', age: 0, hunger: 0, fitness: 10, children: [] },
+                { name: 'Doory', age: 0, hunger: 0, fitness: 10, children: [] },
+                { name: 'Nyangi', age: 0, hunger: 0, fitness: 10, children: [] } 
+            ]);
+    });
+
+    it('increase first child Happy\'s age by 2', () => {
+        parent.children[0].growUp();
+        parent.children[0].growUp();
+
+        expect(parent.children[0].age).toEqual(2);
+    });
+
+    it('increase third child Nyangi\'s age by 1, take her to walk and feed her', () => {
+        parent.children[2].growUp();
+        parent.children[2].walk();
+        parent.children[2].feed();
+
+        expect(parent.children[2]).toEqual(
+            { name: 'Nyangi', age: 1, hunger: 2, fitness: 10, children: [] } 
+        );
+    });
+
+    it('when a dead pet adopts a child, throw an error', () => {
+        parent.age = 30;
+        
+        expect(() => parent.haveBaby('Congi')).toThrow('Your pet is no longer alive :(');
+
     });
 });
 
