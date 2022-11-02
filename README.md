@@ -7,18 +7,6 @@ VirtualPet project 🐩 🐕
 Creating virtual pets using JavaScript. 
 As part of the Manchester Codes curriculum for utilising OOP.
 
-## Installation
-
-* XXXX
-* XXXX
-
-
-## How to use
-
-
-```bash
-XXXXXX
-```
 
 ## Features
 
