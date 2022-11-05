@@ -34,13 +34,12 @@ This is a JavaScript-based virtual pet game. The aim of the game is to create pe
 ## Testing
 
 - The project was built based on the principles of Test Driven Development (TDD)
-- Used the Node.js Read-Eval-Print-Loop (REPL) to run code in the terminal
+- Used the Node.js Read-Eval-Print-Loop (REPL) to test codes in terminal
 - Used the Jest to run the tests
 
 ## Features
 
-- Run the app in terminal
-- Create an instance of the Pet object using its name as a parameter
+- Create an instance of the Pet object using its name as parameter
 ``` bash
 > const pet = new Pet("Fido")
 > pet
@@ -54,7 +53,7 @@ This is a JavaScript-based virtual pet game. The aim of the game is to create pe
 - Walk pets using walk method 
     - This increases fitness level by 4
 - Check up on pets using checkUp method
-- If pets get reaches maximum hunger level (set at 10), maximum age (set at 30) and/or minimum fitness level (0), they wil die. 
+- If pets reach maximum hunger level (currently set at 10), maximum age (set at 30) and/or minimum fitness level (0), they will die. 
 - Pets can adopt other pets using adoptChild method. 
 ``` bash
 > const child = new Pet('Lucy')
@@ -83,7 +82,7 @@ This is a JavaScript-based virtual pet game. The aim of the game is to create pe
 
 ## Future improvements
 
-- To add other functionalities of pets such as playing and grooming
+- To add other functionalities such as playing and grooming
 - To add GUI
     - I built a simple GUI version of this app : https://github.com/cocomarine/virtual-pet-gui
 
